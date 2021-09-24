@@ -1,0 +1,21 @@
+flask
+# opencv-python (removed because of using docker-image)
+certifi
+chardet
+click
+# cmake (removed because of using docker-image)
+decorator
+# dlib (removed because of using docker-image)
+face-recognition
+face-recognition-models
+idna
+imageio
+imageio-ffmpeg
+moviepy
+numpy
+Pillow
+proglog
+requests
+tqdm
+urllib3
+wincertstore

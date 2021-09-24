@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto" href="/"><strong>Upload Picture for Recognition</strong></a>
+    </div>
+</nav>
+
+<br>
+<br>
+
+<div class="container">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="input-group">
+            <input type="file" class="form-control" id="image" name="image" placeholder="Upload an Image"
+                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <button class="btn btn-outline-info" type="Sumbit" id="inputGroupFileAddon04">Upload</button>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="card-body">
+        <p class="h3 text-center card-header">Images Present</p>
+    </div>
+    <div class="list-group">
+        {% for image in image_list %}
+        <div class="d-flex">
+            <a href="{{image[1]}}" class="list-group-item list-group-item-action list-group-item-info"
+                target="_blank">{{image[0]}}</a>
+            <div class="d-flex justify-content-end">
+                <a href="/delete/{{image[1]}}" class="btn btn-outline-info" role="button">Delete</a>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+
+
+</div>
+
+
+{% endblock %}
